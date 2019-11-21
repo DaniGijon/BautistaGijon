@@ -1,0 +1,4 @@
+downloader1 -t -e 1.1 @ DownloaderAdapter1
+0: Hola
+1: Hola
+2: Hi!!
