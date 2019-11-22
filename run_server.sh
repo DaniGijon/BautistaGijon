@@ -15,7 +15,7 @@ var=$(head -n 1 downloader-proxy.out)
 
 echo "$var"
 sleep 1 
-killall nombre_proceso 
+
 
 #ejecutar orchestrator
 ./Orchestrator.py --Ice.Config=Orchestrator.config "$var"  | tee orchestrator-proxy.out
@@ -24,4 +24,3 @@ var2=$(head -n 1 orchestrator-proxy.out)
 
 echo "$var2"
 sleep 1
-killall nombre_proceso 
