@@ -3,7 +3,7 @@
 # vaciar db
 $(RM) -r *.out db/
 #crear db
-mkdir -p db/Registry 
+mkdir -p /tmp/db/Registry
 
 # crear registry 
 icegridregistry --Ice.Config=Node.config
@@ -18,7 +18,7 @@ sleep 1
 
 
 #ejecutar orchestrator
-./Orchestrator.py --Ice.Config=Orchestrator.config "$var"  | tee orchestrator-proxy.out
+./Orchestrator.py --Ice.Config=Orchestrator.config "$var"  | tee orchestrator-proxy.out &
 
 var2=$(head -n 1 orchestrator-proxy.out)
 
