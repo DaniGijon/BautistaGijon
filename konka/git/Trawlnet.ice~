@@ -1,0 +1,20 @@
+// Trawlent Initial phase: introducing actors
+
+module miModulo {
+
+  struct FileInfo {
+    string name;
+    string hash;
+  };
+
+  sequence<FileInfo> FileList;
+
+  interface Downloader {
+    string addDownloadTask(string url);
+  };
+
+  interface Orchestrator {
+    string getFileList();
+    string downloadTask(string url);
+  };
+};

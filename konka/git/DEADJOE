@@ -1,0 +1,157 @@
+
+*** These modified files were found in JOE when it aborted on Thu Nov 21 17:13:36 2019
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+Client.config
+Server.config
+Downloader.config
+Orchestrator.config
+Trawlnet.ice
+Client.py
+downloader-proxy.out
+Client.py
+Trawlnet.ice
+../s2/Printer.ice
+Trawlnet.ice
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Thu Nov 21 17:52:41 2019
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+Downloader.py
+Makefile
+downloader-proxy.out
+Orchestrator.config
+downloader-proxy.out
+downloader-proxy.out
+Orchestrator.config
+Orch.config
+Makefile
+Makefile
+Downloader.py
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Thu Nov 21 17:58:15 2019
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+Cliente.py
+Makefile
+Cliente.py
+Makefile
+Makefile
+downloader-proxy.out
+Orchestrator.config
+Orchestrator.py
+Makefile
+Makefile
+Downloader.config
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Thu Nov 21 18:51:30 2019
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+Cliente.py
+Downloader.py
+Orchestrator.py
+Cliente.py
+Cliente.py
+Makefile
+Node.config
+Downloader.py
+Makefile
+Downloader.py
+Orchestrator.py
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Thu Nov 21 18:53:24 2019
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+Cliente.py
+Cliente.py
+Cliente.py
+Makefile
+Orchestrator.config
+Orchestrator.config
+Orchestrator.py
+Orchestrator.config
+Makefile
+Cliente.config
+Cliente.config
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Thu Jan 16 00:54:11 2020
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+Cliente.py
+Downloader.py
+Trawlnet.ice
+Downloader.py
+Cliente.py
+Downloader.py
+node1.config
+node1.config
+Server.py
+subscriber.py
+Makefile
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Thu Jan 16 21:24:19 2020
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+adddownload
+
+*** File '(Unnamed)'
+Orchestrator.py
+Orchestrator.py
+Orchestrator.py
+Orchestrator.py
+Orchestrator.py
+Orchestrator.py
+Orchestrator.py
+Orchestrator.py
+Orchestrator.py
+Trawlnet.ice
+Makefile
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
