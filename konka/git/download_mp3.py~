@@ -1,6 +1,7 @@
 try:
+    import unicodedata
     import youtube_dl
-    import os
+    import os.path
 except ImportError:
     print('ERROR: do you have installed youtube-dl library?')
     sys.exit(1)
@@ -38,7 +39,7 @@ def download_mp3(url, destination='./'):
     options['progress_hooks'] = [progress_hook]
     options['outtmpl'] = os.path.join(destination, '%(title)s.%(ext)s')
     with youtube_dl.YoutubeDL(options) as youtube:
-        youtube.download([url])
+        youtube.download(['https://www.youtube.com/watch?v=_W1BTuAlvlw'])
     filename = task_status['filename']
     # BUG: filename extension is wrong, it must be mp3
     filename = filename[:filename.rindex('.') + 1]

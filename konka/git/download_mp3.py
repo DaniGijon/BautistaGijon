@@ -1,6 +1,6 @@
 try:
     import youtube_dl
-    import os
+    import os.path
 except ImportError:
     print('ERROR: do you have installed youtube-dl library?')
     sys.exit(1)
@@ -26,7 +26,7 @@ _YOUTUBEDL_OPTS_ = {
     'logger': NullLogger()
 }
 
-def download_mp3(url, destination='/tmp/trawlnet_cache/'):
+def download_mp3(url, destination='./'):
     '''
     Synchronous download from YouTube
     '''
@@ -38,7 +38,7 @@ def download_mp3(url, destination='/tmp/trawlnet_cache/'):
     options['progress_hooks'] = [progress_hook]
     options['outtmpl'] = os.path.join(destination, '%(title)s.%(ext)s')
     with youtube_dl.YoutubeDL(options) as youtube:
-        youtube.download([url])
+        youtube.download(['https://www.youtube.com/watch?v=_W1BTuAlvlw'])
     filename = task_status['filename']
     # BUG: filename extension is wrong, it must be mp3
     filename = filename[:filename.rindex('.') + 1]

@@ -155,3 +155,28 @@ Processing '/etc/joe/joerc'...
 Processing '/etc/joe/ftyperc'...
 Finished processing /etc/joe/ftyperc
 Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Sat Jan 18 10:15:19 2020
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+adddownload
+
+*** File '(Unnamed)'
+Makefile
+download_mp3.py
+download_mp3.py
+/usr/bin/youtube-dl
+download_mp3.py
+Makefile
+download_mp3.py
+download_mp3.py
+Makefile
+Makefile
+orchestrator-proxy.out
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc

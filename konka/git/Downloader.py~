@@ -17,7 +17,7 @@ class DownloaderI(miModulo.Downloader):
         sys.stdout.flush()
         self.n += 1
         
-        descargar = download_mp3.download_mp3(urll)
+        descargar = download_mp3.download_mp3('https://www.youtube.com/watch?v=Q0oIoR9mLwc')
         
         filename = "prueba2.txt"
         h = hash.computeHash(filename) 
