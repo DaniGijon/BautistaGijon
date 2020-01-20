@@ -5,9 +5,11 @@ import sys
 import Ice
 Ice.loadSlice('Trawlnet.ice')
 import miModulo
+import Example
 import download_mp3
 import os
 import hash
+import IceStorm
 
 class DownloaderI(miModulo.Downloader):
     n = 0
@@ -24,10 +26,10 @@ class DownloaderI(miModulo.Downloader):
        
         dt = (miModulo.FileInfo(urll,h))
         return dt
-
-
+   
 class Downloader(Ice.Application):
     def run(self, argv):
+        
         broker = self.communicator()
         servant = DownloaderI()
 

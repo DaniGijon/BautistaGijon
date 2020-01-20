@@ -5,6 +5,8 @@ import sys
 import Ice
 Ice.loadSlice('Trawlnet.ice')
 import miModulo
+import Example
+import IceStorm
 
 
 class OrchestratorI(miModulo.Orchestrator):
@@ -34,32 +36,89 @@ class OrchestratorI(miModulo.Orchestrator):
        # sys.stdout.flush()
        # self.n += 1
         return listaCanciones
+
+       #nuevo def
+    def write(self, message, current=None):
+        print("Event received: {0}".format(message))
+        sys.stdout.flush()
             
 class Orchestrator(Ice.Application):
-    def run(self, argv):
-        broker = self.communicator()
-        servant = OrchestratorI()
-        
-        adapter = broker.createObjectAdapter("OrchestratorAdapter")
-        
+    #nuevo def: suscriber
+    def get_topic_manager(self):
+        key = 'IceStorm.TopicManager.Proxy'
+        proxy = self.communicator().propertyToProxy(key)
+        if proxy is None:
+            print("property '{}' not set".format(key))
+            return None
+
+        print("Using IceStorm in: '%s'" % key)
+        return IceStorm.TopicManagerPrx.checkedCast(proxy)
     
-        proxy = self.communicator().stringToProxy(argv[1])
-        
-        proxyy = adapter.add(servant,broker.stringToIdentity("orchestrator1"))
-        print(proxyy, flush=True)
-        
-       # downloader 
-        downloader = miModulo.DownloaderPrx.checkedCast(proxy)
+    #nuevo def: publisher
+    def get_topic_manager(self):
+        key = 'IceStorm.TopicManager.Proxy'
+        proxy = self.communicator().propertyToProxy(key)
+        if proxy is None:
+            print("property {} not set".format(key))
+            return None
 
-        if not downloader:
-            raise RuntimeError('Invalid proxy')
-        
-        
-        servant.downloader = downloader
+        print("Using IceStorm in: '%s'" % key)
+        return IceStorm.TopicManagerPrx.checkedCast(proxy)
 
+    def run(self, argv):
+        
+        #nuevo bloque publisher
+        topic_mgr = self.get_topic_manager()
+        if not topic_mgr:
+            print('Invalid proxy')
+            return 2
+
+        topic_name = "PrinterTopic"
+        try:
+            topic = topic_mgr.retrieve(topic_name)
+        except IceStorm.NoSuchTopic:
+            print("no such topic found, creating")
+            topic = topic_mgr.create(topic_name)
+
+        publisher = topic.getPublisher()
+        printer = miModulo.OrchestratorPrx.uncheckedCast(publisher)
+        #printer = Example.PrinterPrx.uncheckedCast(publisher)
+
+        print("publishing 10 'Hello World' events")
+        for i in range(10):
+            printer.write("Hello World %s!" % i)
+        #hasta aqui
+
+
+        #nuevo bloque suscriber
+        topic_mgr = self.get_topic_manager()
+        if not topic_mgr:
+            print("Invalid proxy")
+            return 2
+
+        ic = self.communicator()
+        servant = OrchestratorI()
+        adapter = ic.createObjectAdapter("PrinterAdapter")
+        subscriber = adapter.addWithUUID(servant)
+
+        topic_name = "PrinterTopic"
+        qos = {}
+        try:
+            topic = topic_mgr.retrieve(topic_name)
+        except IceStorm.NoSuchTopic:
+            topic = topic_mgr.create(topic_name)
+
+        topic.subscribeAndGetPublisher(qos, subscriber)
+        #print(adapter.addWithUUID(servant))
+        print("Waiting events... '{}'".format(subscriber))
+        #hasta aqui
+
+        
         adapter.activate()
         self.shutdownOnInterrupt()
-        broker.waitForShutdown()
+        ic.waitForShutdown()
+        #nuevo linea
+        topic.unsubscribe(subscriber)
         
         return 0
 

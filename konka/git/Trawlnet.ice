@@ -36,6 +36,7 @@ module miModulo {
   };
 
   interface Orchestrator {
+    void write(string message);
     FileList getFileList();
     Transfer* getFile(string name);
     void announce(Orchestrator* other);
@@ -49,6 +50,12 @@ module miModulo {
 
   interface UpdateEvent {
     void newFile(FileInfo file);
+  };
+};
+
+module Example {
+  interface Printer {
+    void write(string message);
   };
 };
 

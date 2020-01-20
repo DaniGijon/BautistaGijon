@@ -1,2 +1,24 @@
-orchestrator1 -t -e 1.1 @ OrchestratorAdapter1
-0: https://www.youtube.com/watch?v=ZmYbFrzL1P4
+Using IceStorm in: 'IceStorm.TopicManager.Proxy'
+publishing 10 'Hello World' events
+Using IceStorm in: 'IceStorm.TopicManager.Proxy'
+Waiting events... '479670D8-DDAF-4D90-AE72-9A3DED62915F -t -e 1.1:tcp -h 192.168.1.144 -p 34039 -t 60000'
+Event received: Hello World 0!
+Event received: Hello World 1!
+Event received: Hello World 2!
+Event received: Hello World 3!
+Event received: Hello World 4!
+Event received: Hello World 5!
+Event received: Hello World 6!
+Event received: Hello World 7!
+Event received: Hello World 8!
+Event received: Hello World 9!
+Event received: Hello World 0!
+Event received: Hello World 1!
+Event received: Hello World 2!
+Event received: Hello World 3!
+Event received: Hello World 4!
+Event received: Hello World 5!
+Event received: Hello World 6!
+Event received: Hello World 7!
+Event received: Hello World 8!
+Event received: Hello World 9!
